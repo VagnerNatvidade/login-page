@@ -1,9 +1,13 @@
-function App() {
+import React from "react";
+import RoutesApp from "./routes";
+import { AuthProvider } from "./context/auth";
+
+const App = () => {
   return (
-    <div>
-      <h1>Hello World!</h1>
-    </div>
+    <AuthProvider>
+      <RoutesApp />
+    </AuthProvider>
   );
-}
+};
 
 export default App;
