@@ -1,6 +1,6 @@
-import { Children, createContext, useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 
-export const AuthContext = createContext();
+export const AuthContext = createContext({});
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState();
@@ -37,7 +37,7 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
-  const signiup = ({ email, password }) => {
+  const signup = ({ email, password }) => {
     const usersStorage = JSON.parse(localStorage.getItem("user_db"));
 
     const hasUser = usersStorage?.filter((user) => user.email === email);
@@ -66,7 +66,7 @@ export const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ user, signed: !!user, signin, signiup, signout }}
+      value={{ user, signed: !!user, signin, signup, signout }}
     >
       {children}
     </AuthContext.Provider>
