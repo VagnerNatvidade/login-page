@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link, useNavigate } from "react-router";
+import style from "./style.module.css";
 
 const Signup = () => {
   const { signup } = useAuth();
@@ -32,45 +33,56 @@ const Signup = () => {
 
   return (
     <div>
-      <h1>SISTEMA DE LOGIN</h1>
+      <h1 className={style.title}>SISTEMA DE LOGIN</h1>
 
-      <form>
+      <form className={style.form}>
         <div>
-          <label for="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            placeholder="Digite seu email..."
-            onChange={(e) => [setEmail(e.target.value), setError("")]}
-          ></input>
+          <div className={style.inputWrapper}>
+            <label for="email">Email</label>
+            <input
+              className={style.input}
+              id="email"
+              type="email"
+              value={email}
+              placeholder="Digite seu email..."
+              onChange={(e) => [setEmail(e.target.value), setError("")]}
+            ></input>
+          </div>
+          <div className={style.inputWrapper}>
+            <label for="confirmEmail">Confirmar email</label>
+            <input
+              className={style.input}
+              id="confirmEmail"
+              type="email"
+              value={confirmEmail}
+              placeholder="Confirme seu email..."
+              onChange={(e) => [setConfirmEmail(e.target.value), setError("")]}
+            ></input>
+          </div>
+          <div className={style.inputWrapper}>
+            <label for="password">Senha</label>
+            <input
+              className={style.input}
+              id="password"
+              type="password"
+              value={password}
+              placeholder="Digite sua senha..."
+              onChange={(e) => [setPassword(e.target.value), setError("")]}
+            ></input>
+          </div>
         </div>
-        <div>
-          <label for="confirmEmail">Confirmar email</label>
-          <input
-            id="confirmEmail"
-            type="email"
-            value={confirmEmail}
-            placeholder="Confirme seu email..."
-            onChange={(e) => [setConfirmEmail(e.target.value), setError("")]}
-          ></input>
-        </div>
-        <div>
-          <label for="password">Senha</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            placeholder="Digite sua senha..."
-            onChange={(e) => [setPassword(e.target.value), setError("")]}
-          ></input>
-        </div>
+
         <p>{error}</p>
-        <button onClick={handleSignup}>Se inscrever</button>
-        <label>
+        <button className={style.button} onClick={handleSignup}>
+          Se inscrever
+        </button>
+        <label className={style.entry}>
           Já tem uma conta?
           <strong>
-            <Link to="./signin">Registre-se.</Link>
+            <Link className={style.link} to="./signin">
+              {" "}
+              Entrar.
+            </Link>
           </strong>
         </label>
       </form>

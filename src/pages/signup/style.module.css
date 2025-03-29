@@ -1,0 +1,63 @@
+.title {
+  font-size: 4rem;
+  margin-bottom: 3.2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  background: #ecb365;
+}
+
+.inputWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.inputWrapper:first-child, .inputWrapper:nth-child(2) {
+  margin-bottom: 1.2rem;
+}
+
+.input {
+  padding: 0.8rem 0.4rem;
+  border: none;
+  border-radius: 0.8rem;
+  outline: none;
+  background: #efefef;
+}
+
+.input::placeholder {
+  color: inherit;
+}
+
+.button {
+  margin-top: 1.6rem;
+  padding: 1.6rem;
+  border-radius: 0.8rem;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #efefef;
+  background-color: #04293a;
+}
+
+.button:hover {
+  cursor: pointer;
+}
+
+.entry {
+  padding-left: 0.6rem;
+  font-size: 1.4rem;
+}
+
+.link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.link:hover {
+  opacity: 0.7;
+}

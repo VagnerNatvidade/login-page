@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import useAuth from "../../hooks/useAuth";
 import { Link, useNavigate } from "react-router";
+import style from "./style.module.css";
 
 const Signin = () => {
   const { signin } = useAuth();
@@ -28,37 +29,47 @@ const Signin = () => {
 
   return (
     <div>
-      <h1>SISTEMA DE LOGIN</h1>
+      <h1 className={style.title}>SISTEMA DE LOGIN</h1>
 
-      <form>
+      <form className={style.form}>
         <div>
-          <label for="email">Email</label>
-          <input
-            id="email"
-            type="email"
-            value={email}
-            placeholder="Digite seu email..."
-            onChange={(e) => [setEmail(e.target.value), setError("")]}
-          ></input>
+          <div className={style.inputWrapper}>
+            <label for="email">Email</label>
+            <input
+              className={style.input}
+              id="email"
+              type="email"
+              value={email}
+              placeholder="Digite seu email..."
+              onChange={(e) => [setEmail(e.target.value), setError("")]}
+            ></input>
+          </div>
+          <div className={style.inputWrapper}>
+            <label for="password">Senha</label>
+            <input
+              className={style.input}
+              id="password"
+              type="password"
+              value={password}
+              placeholder="Digite sua senha..."
+              onChange={(e) => [setPassword(e.target.value), setError("")]}
+            ></input>
+          </div>
         </div>
-        <div>
-          <label for="password">Senha</label>
-          <input
-            id="password"
-            type="password"
-            value={password}
-            placeholder="Digite sua senha..."
-            onChange={(e) => [setPassword(e.target.value), setError("")]}
-          ></input>
-        </div>
+
         <p>{error}</p>
-        <button onClick={handleSignin}>Entrar</button>
-        <label>
+        <button className={style.button} onClick={handleSignin}>
+          Entrar
+        </button>
+        <p className={style.register}>
           Não tem uma conta?
           <strong>
-            <Link to="./signup">Registre-se.</Link>
+            <Link className={style.link} to="./signup">
+              {" "}
+              Registre-se.
+            </Link>
           </strong>
-        </label>
+        </p>
       </form>
     </div>
   );
