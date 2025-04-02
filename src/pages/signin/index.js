@@ -64,7 +64,7 @@ const Signin = () => {
         <p className={style.register}>
           Não tem uma conta?
           <strong>
-            <Link className={style.link} to="./signup">
+            <Link className={style.link} to="/signup">
               {" "}
               Registre-se.
             </Link>

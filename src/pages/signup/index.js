@@ -79,7 +79,7 @@ const Signup = () => {
         <label className={style.entry}>
           Já tem uma conta?
           <strong>
-            <Link className={style.link} to="./signin">
+            <Link className={style.link} to="/signin">
               {" "}
               Entrar.
             </Link>
